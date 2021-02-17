@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import './index.css'
+import './index.scss'
 import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
