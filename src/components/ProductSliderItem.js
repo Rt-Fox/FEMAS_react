@@ -1,19 +1,31 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom';
+import React, {useContext,useState} from 'react';
 import {PRODUCT_ROUTE} from "../utils/consts";
+import {Context} from "../index";
 
 const ProductSliderItem = ({product}) => {
-    const history = useHistory()
+    const {basket} = useContext(Context)
+    useState(() => {
+        if (localStorage.basket) {
+            basket.setBasket(JSON.parse(localStorage.basket))
+        }
+    }, [])
+    function handleClick(e) {
+        e.preventDefault();
+        console.log(product.uuid)
+        basket.setPushBasket(product, product.uuid)
+    }
     return (
-        <div className="card-main" onClick={() => history.push(PRODUCT_ROUTE + '/' + product.id)}>
-            <div className="card-carousel">
-                <img className="card-img-top" src={product.img}/>
+        <a className="card-main" href={PRODUCT_ROUTE + '/sofas/' + product.uuid}>
+            <div className="card-product">
+                <div className="card-img-top">
+                    <img src={product.main_photo}/>
+                </div>
                 <div className="card-body d-flex justify-content-between">
                     <div className="">
                         <h5 className="card-title">{product.name}</h5>
-                        <p className="card-text">{product.price}</p>
+                        <p className="card-text">{product.price} ₽</p>
                     </div>
-                    <a href="#" className="">
+                    <button onClick={handleClick} className="buy_btn">
                         <svg width="19" height="19" viewBox="0 0 19 22" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -21,10 +33,10 @@ const ProductSliderItem = ({product}) => {
                                 fill="#fff" stroke="#fff" strokeWidth="0.5"
                                 strokeMiterlimit="10"/>
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
-        </div>
+        </a>
     );
 };
 

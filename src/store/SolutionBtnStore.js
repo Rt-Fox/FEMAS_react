@@ -5,7 +5,7 @@ export  default class SolutionBtnStore {
         this._types = [
             {id:1, name: 'Новые'},
             {id:2, name: 'Гостинная'},
-            {id:3, name: 'Гостинная'},
+            {id:3, name: 'Обеденная зона'},
             {id:4, name: 'Cпалья'},
             {id:5, name: 'Cтудия'}
         ]

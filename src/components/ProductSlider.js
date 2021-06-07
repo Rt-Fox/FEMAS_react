@@ -5,10 +5,11 @@ import ProductSliderItem from "./ProductSliderItem";
 import Carousel from "react-elastic-carousel";
 import AdsSliderItem from "./AdsSliderItem";
 
-const ProductSlider = observer(() => {
+const ProductSlider = observer(({type}) => {
     const {product} = useContext(Context);
     const breakPoints = [
-        {width: 0, itemsToShow: 4, className: "slider-1_block", showArrows: false, enableMouseSwipe: true},
+        {width: 0, itemsToShow: 3, className: "slider-1_block", showArrows: false, enableMouseSwipe: true},
+        {width: 1000, itemsToShow: 4, className: "slider-1_block", showArrows: false, enableMouseSwipe: true},
     ];
 
     return (
@@ -31,7 +32,7 @@ const ProductSlider = observer(() => {
                           )
                       }}>
                 {product.product.map(product =>
-                    <ProductSliderItem key={product.id} product={product}/>
+                    <ProductSliderItem key={product.uuid} product={product}/>
                 )}
             </Carousel>
         </div>

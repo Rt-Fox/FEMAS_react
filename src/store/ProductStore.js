@@ -1,19 +1,18 @@
 import {makeAutoObservable} from "mobx";
-
+//все продукты хранятся тут
 export  default class ProductStore {
     constructor() {
         this._product = [
-            {id:1, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:2, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:3, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:4, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:5, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:6, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:7, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:8, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
-            {id:9, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:1, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg',},
+            {uuid:2, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:3, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:4, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:5, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:6, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:7, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:8, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
+            {uuid:9, name: 'Пуф золотой', price:'12 500 ₽', img: '/images/card-1.jpg'},
         ]
-
         makeAutoObservable(this)
     }
     setProduct(product) {

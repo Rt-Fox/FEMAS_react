@@ -1,13 +1,13 @@
-import React from 'react';
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import React,{useContext,useEffect} from 'react';
 import BtnFiltr from "../components/BtnFiltr";
 import BtnFiltrSlt from "../components/BtnFiltrSlt";
 import ProductSlider from "../components/ProductSlider";
 import ProductSliderSlt from "../components/ProductSliderSlt";
 import AdsSlider from "../components/AdsSlider";
+import {observer} from "mobx-react-lite";
 
-const Catalog = () => {
+
+const Catalog = observer(() => {
     return (
         <div>
             <AdsSlider />
@@ -25,12 +25,12 @@ const Catalog = () => {
                 <ProductSliderSlt />
             </div>
             <div className="container slider-4">
-                <div className="d-flex justify-content-between mb-4">
+                <div className="d-flex justify-content-between align-items-center mb-4">
                     <div>
                         <h1>#FEMAS</h1>
                         <p>Наша мебель в ваших постах</p>
                     </div>
-                    <div className="btn btn-prim active">Подписаться</div>
+                    <div className="btn btn-subscribe">Подписаться</div>
                 </div>
                 <div className="row">
                     <div className="col-12 d-flex">
@@ -53,12 +53,11 @@ const Catalog = () => {
                                 <img src="/images/rectangle36.png" alt=""/>
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     );
-};
+});
 
 export default Catalog;

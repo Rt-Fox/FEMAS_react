@@ -3,9 +3,9 @@ import {makeAutoObservable} from "mobx";
 export  default class AdsStore {
     constructor() {
         this._ads = [
-            {id: 1, title: 'МЫ СОЗДАЕМ УЮТ', img: "./images/rectangle37.png", main:true},
-            {id: 2, title: 'Скидка 20% ПРИ ЗАКАЗЕ НА САЙТЕ', img: "./images/Rectangle.jpg", main:false},
-            {id: 3, title: 'Обеденные группы', img: "./images/rectangle9.png", main:false},
+            {uuid: 1, title: 'МЫ СОЗДАЕМ УЮТ', photo: "./images/rectangle37.png", main:true},
+            {uuid: 2, title: 'Скидка 20% ПРИ ЗАКАЗЕ НА САЙТЕ', photo: "./images/Rectangle.jpg", main:false},
+            {uuid: 3, title: 'Обеденные группы', photo: "./images/rectangle9.png", main:false},
         ]
         makeAutoObservable(this)
     }

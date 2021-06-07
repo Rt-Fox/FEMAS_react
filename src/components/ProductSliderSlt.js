@@ -30,8 +30,8 @@ const ProductSliderSlt = observer(() => {
                               </div>
                           )
                       }}>
-                {sltproduct.product.map( (item, index) => index%4? null : sltproduct.product.slice(index, index+4)).filter((item) => item).map(arr =>
-                    (arr.length)? <ProductSliderSltItem arr={arr} /> : null)}
+                {sltproduct.product.map( (item, index) => index%4? null : sltproduct.product.slice(index, index+4)).filter((item) => item).map(((arr,index) =>
+                    (arr.length)&&<ProductSliderSltItem key={index} arr={arr} />))}
             </Carousel>
         </div>
     );
